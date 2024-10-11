@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav{
+            margin-top: -3vw;
+            height: 10vh;
+            width: 100vw;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="your-logo.png" alt="Your Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://click.daraz.com.np/e/_6IotP
+                " data-mobile-app-link="your-daraz-mobile-app-link">Shop on Daraz</a></li>
+            <li><a href="https://click.daraz.com.np/e/_6IotP
+                " data-mobile-app-link="your-mobile-app-link2">About Us</a></li>
+            <li><a href="https://click.daraz.com.np/e/_6IotP
+                " data-mobile-app-link="your-mobile-app-link3">Contact Us</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button type="submit">Search</button>
+        </div>
+    </nav>
+</body>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            if (isMobileDevice()) {
+                event.preventDefault();
+                window.location.href = link.getAttribute('data-mobile-app-link');
+            }
+        });
+    });
+});
+
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+</script>
+</html>
